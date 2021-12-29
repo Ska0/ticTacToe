@@ -1,31 +1,32 @@
-const Game = (function () {
-  let gameCubeArray = [];
-  let gameDiv = document.querySelector(".game-container");
+const gameBoard = (function() {
+   //create divs, and store them in an array
+   const gameCubeArray = [];
 
-  function createContainer() {
-     if (gameDiv.innerHTML === '') {
-       for (let i = 0; i < 9; i++) {
-         let gameCube = document.createElement("div");
-         gameCube.classList = "game-cube";
-         gameCube.dataset.cube = i;
-         gameDiv.appendChild(gameCube);
-         gameCubeArray.push(gameCube);
-       }
-     }
-  }
+   return {gameCubeArray}
+})()
 
-  function updateContainer() {
-    if (!gameDiv.innerHTML === '') {
-      gameDiv.innerHTML = '';
-      for (i in gameCubeArray) {
-        let gameCube = document.createElement("div");
-        gameCube.classList = "game-cube";
-        gameCube.dataset.cube = i;
-        gameDiv.appendChild(gameCube);
-      }
-    }
-  }
-  return {gameCubeArray, createContainer, updateContainer};
+
+const gameModule = (function() {
+//Game Logic, turn function, startup, playerUI, GameBoard Factory,
+    
 })();
 
-Game.createContainer();
+const Players = (function() {
+   //Player Factory, Player Objects[name, mark, getNameFunction, getMarkFunction, scoreCardArray]
+   const playerMaker = (name, mark) => {
+      let scoreCardArray = ['','','','','','','','','']
+      const getName = () => name;
+      const getMark = () => mark;
+
+         return {scoreCardArray, getName, getMark}
+   }  
+
+   const Computer = playerMaker('Computer', 'X')
+
+      return {Computer}
+})();
+
+
+
+
+
