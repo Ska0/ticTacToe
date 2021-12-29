@@ -6,12 +6,12 @@ const gameBoard = (function() {
 })()
 
 
-const gameModule = (function() {
+const game = (function() {
 //Game Logic, turn function, startup, playerUI, GameBoard Factory,
     
 })();
 
-const Players = (function() {
+const players = (function() {
    //Player Factory, Player Objects[name, mark, getNameFunction, getMarkFunction, scoreCardArray]
    const playerMaker = (name, mark) => {
       let scoreCardArray = ['','','','','','','','','']
