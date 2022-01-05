@@ -1,26 +1,86 @@
 * {
    box-sizing: border-box;
+   /* border: 2px solid */
+   
 }
 
 body {
-  display: flex;
-  justify-content: end;
-   background: rgb(158, 19, 78);
-  background: linear-gradient(
-    108deg,
-    rgba(158, 19, 78, 1) 22%,
-    rgba(18, 189, 121, 1) 89%,
-    rgba(18, 189, 121, 1) 100%
-  );
+   background: linear-gradient(
+      108deg,
+     #700a3467 22%,
+     rgba(18, 189, 121, 0.432) 89%,
+     #05a86750 100%  
+     ); 
+     
+     background-color: #080808dc;
+   background-size: contain;
+   display: flex;
+   justify-content: center;
+   margin: 0;
+   height: 98vh;
+   
 }
 
+.player-ui {
+   background-color: #8a032560;
+   border: 8px inset #00000091;
+   outline: 1px double black;
+   border-radius: 10px;
+   height: 325px;
+   width: 650px;
+   margin-left: 50px;
+   margin-top: 50px;
+   grid-row: 4;
+   grid-column: 6;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+}
 
-.grid-container {
+.player-name-display {
+   width: 80%;
+   height: 100px;
+   border-radius: 10px;
+   opacity: 60%;
+   border: 8px inset #0000004f;
+   outline: 1px double black;
+   margin-top: 15px;
+   color: white;
+   font-size: 70px;
+   text-align: center;
+   font-family: monospace;
+}
+.player-mark-display {
+   width: 150px;
+   height: 150px;
+   border-radius: 10px;
+   opacity: 60%;
+   border: 8px inset #0000004f;
+   outline: 1px double black;
+}
+.turn-display {
+   width: 150px;
+   height: 150px;
+   border-radius: 10px;
+   opacity: 60%;
+   border: 8px inset #0000004f;
+   outline: 1px double black;
+   color: white;
+   font-size: 120px;
+   text-align: center;
+   font-family: monospace;
+}
+
+.grid-container { 
    display: grid;
    grid-template-columns: 175px 175px 175px 175px 175px 175px 175px 175px;
    grid-template-rows: 175px 175px 175px 175px;
    gap: 11px;
    flex-shrink: 1;
+   height: min-content;
+   margin-top: 150px;
+   
 }
 
 .game-container {
@@ -28,28 +88,233 @@ body {
    grid-row-end: 5;
    grid-column-start: 3;
    grid-column-end: 6;
-   /* background-color: black; */
-   display: flex;
-   flex-wrap: wrap;
-   flex-shrink: 0;
+   display: grid;
+   grid-template-columns: 175px 175px 175px;
+   grid-template-rows: 175px 175px 175px;
    gap: 11px;
+   margin-right: 20px;
+   border: 8px inset #0000005e;
+   outline: 1px double rgba(0, 0, 0, 0.356);
+   width: min-content;
+   height: min-content;
+   border-radius: 10px;
+   
 }
 
-.game-cube {
+
+.start-cube {
+   grid-row-start: 2;
+   grid-column-start: 2;
+}
+
+.name-form {
+   background-color: rgba(243, 239, 30, 0.356);
+   color: antiquewhite;
+   font-size: 20px;
+   width: 200px;
+   height: 35px;
+   margin: auto;
+   border-radius: 5px;
+   border: 2px inset #c4e026;
+   outline: 1px inset #c4e026c0;
+   
+}
+
+
+.game-cube, .modal-cube, 
+.start-cube, .restart-cube {
    width: 175px;
    height: 175px;
-   background-color: #c57a7a;
-   opacity: 84%;
+   background-color: #d1d1d134;
+   border-radius: 10px;
+   border: 2px solid #ffef0b25;
+   color: #00000036;
+   font-size: 50px;
+   font-family: 'Trebuchet MS', sans-serif;
+   text-align: center;
+   padding: 25px;
 }
+
+
+
+#modal {
+   display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   background-image: url('bg.png');
+   background-size: cover;
+   position: fixed;
+   z-index: 1;
+
+}
+
+.modal-content {
+   display: flex;
+   flex-flow: row wrap;
+
+   align-items: center;
+   align-content: center;
+   text-align: center;
+   justify-content: center;
+   background-color: #00000081;
+   background-color: ;
+   border-radius: 10px;
+   gap: 150px;
+   width:1200px;
+   height: 800px;
+   grid-template-columns: 400px 400px 400px 400px 400px;
+
+}
+   
+.modal-player {
+   width: 340px;
+   height: 450px;
+   padding: 20px;
+   border-radius: 10px;
+   display: flex;
+   gap: 35px;
+   flex-direction: column;
+   justify-content: center;
+   background-color: #2f2c33a1;
+   align-items: center;
+
+}
+
+.modal-top {
+   color: #c4e026;
+   font-size: 40px;
+   font-weight: bold;
+   font-family: cursive;
+   border-radius: 10px;
+   padding: 10px 15px;
+   
+}
+
+.choice-one, .choice-two {
+   width: 150px;
+   height: 220px;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   border: 1px solid #c57a7a;
+   margin: 20px;
+
+}
+
+.X {
+   background-image: url('x.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+
+}
+
+.O {
+   background-image: url('o.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+
+}
+
+.xBox, .oBox { 
+   height: 110px;
+   margin: 5px;
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+
+}
+
+.xBox {
+   background-image: url('x.png');
+
+}
+
+
+
+.oBox {
+   background-image: url('o.png');
+
+}
+
+.select {
+   border: 7px solid rgba(211, 211, 15, 0.815);
+   border-radius: 5px;
+
+}
+
+.close-button {
+   background-color: #0f0606;
+   color: #753535;
+   opacity: 90%;
+   height: 95px;
+   width: 50%;
+
+   border-radius: 10px;
+   font-size: 63px;
+   font-family: monospace;   
+   text-align: center;
+   text-shadow: rgb(88, 54, 29) 5px 0px;
+
+}
+
 .tic {
    grid-row-start: 3;
+
 }
 
 .tac {
    grid-column-start: 5 ;
+   
+
 }
 
 .toe {
    grid-column-start: 6;
-   grid-row-end: 3;
+   grid-row-start: 3;
+   margin-left: 50px;
+
+}
+
+.win-modal {
+   display: none;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   background-image: url('bg.png');
+   background-size: cover;
+   position: fixed;
+   z-index: 1;
+
+}
+
+.win-modal-content {
+   background-color: #00000081;
+   width: 1200px;
+   height: 600px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 30px;
+
+}
+
+.winner-name-display {
+   height: 120px;
+  width: 100%;
+  text-align: center;
+  color: white;
+
+}
+
+.restart-cube {
+   background-color: #98959cc2;
+
 }

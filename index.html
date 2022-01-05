@@ -1,20 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-   <script src="script.js" defer></script>
-   <title>TicTacToe!</title>
-</head>
-<body>
-   <div class="grid-container">
-      <img class="tic" src="Tic.png" alt="tic">
-      <img src="tac.png" alt="tac" class="tac">
-      <div class="game-container"></div>
-      <img src="toe!.png" alt="" class="toe">
-   </div>
-   
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>TicTacToe!</title>
+  </head>
+  <body>
+    <div class="grid-container">
+    <img class="tic" src="Tic.png" alt="tic" />
+    <img src="Tac.png" alt="tac" class="tac" />
+    <div class="game-container">
+    <div id="start" class="start-cube">New Game</div>
+    </div>
+    <img src="toe!.png" alt="" class="toe" />
+    </div>
+    </div>
+    <div id="modal">
+     <div class="modal-content">
+      <div class="modal-player">
+        <form>
+          <div class="modal-top">Player 1: </div>
+          <input name="text" type="text" class="name-form" />
+          
+          <div class="choice-one">
+            <div data-player= "1" data-mark= "X" class="xBox"></div>
+            <div data-player= "1" data-mark= "O" class="oBox"></div>
+          </div>
+          
+        </div>
+      </form>
+      
+      <div class="modal-player">
+        <form>
+          <div class="modal-top">Player 2: </div>
+          <input name="text" type="text" class="name-form" />
+          
+          <div class="choice-two">
+            <div data-player= "2" data-mark= "X" class="xBox"></div>
+            <div data-player= "2" data-mark= "O" class="oBox"></div>
+          </div>
+          
+        </div>
+      </form>
+      
+      
+      
+      <button id="close" action="submit" class="close-button"> Start Game </button>
+    </div>
+      
+      
+      
+      
+    </div>
+
+    </div>
+    <div class="win-modal">
+      <div class="win-modal-content"><div class="winner-name-display"></div><div class="restart-cube">New Game</div></div>
+    </div>
+  </body>
 </html>
