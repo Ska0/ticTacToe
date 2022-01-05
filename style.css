@@ -126,7 +126,7 @@ body {
    width: 175px;
    height: 175px;
    background-color: #d1d1d134;
-   border-radius: 10px;
+   border-radius: 5px;
    border: 2px solid #ffef0b25;
    color: #00000036;
    font-size: 50px;
@@ -160,7 +160,7 @@ body {
    text-align: center;
    justify-content: center;
    background-color: #00000081;
-   
+   box-shadow: 10px 10px 50px #0f060648;
    border-radius: 10px;
    gap: 150px;
    width:1200px;
@@ -296,6 +296,8 @@ body {
 
 .win-modal-content {
    background-color: #00000081;
+   border-radius: 10px;
+   box-shadow: 10px 10px 50px #0f060648;
    width: 1200px;
    height: 600px;
    display: flex;
@@ -311,6 +313,8 @@ body {
   width: 100%;
   text-align: center;
   color: white;
+  font-size: 65px;
+  font-family: monospace;
 
 }
 
